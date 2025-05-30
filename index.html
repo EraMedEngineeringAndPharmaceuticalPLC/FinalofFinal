@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="Images@Era/Icons/Logo&ico/ico.ico">
+    <title>Era Med Pharmaceuticals PLC</title>
+    <link rel="icon" type="image/x-icon" href="Images@Era/Icons/Logo&ico/ico.ico">
+
+    <!-- Pre Landing page for eramed by de-(እደ-ኤልዳ)eldahcreatives -->
+
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff;
+            overflow: hidden;
+        }
+
+        #intro {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s ease;
+        }
+
+        .fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .ripple-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .ripple {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: rgba(40, 167, 69, 0.08);
+            transform: translate(-50%, -50%);
+            animation: rippleAnim 6s infinite;
+        }
+
+        .ripple:nth-child(2) {
+            animation-delay: 1s;
+            background-color: rgba(40, 167, 69, 0.12);
+        }
+
+        .ripple:nth-child(3) {
+            animation-delay: 2s;
+            background-color: rgba(40, 167, 69, 0.2);
+        }
+
+        .ripple:nth-child(4) {
+            animation-delay: 3s;
+            background-color: rgba(40, 167, 69, 0.3);
+        }
+
+        @keyframes rippleAnim {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(40);
+                opacity: 0;
+            }
+        }
+
+        .letter-container {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: rgb(40, 167, 69);
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .letter {
+            display: inline-block;
+            opacity: 0;
+            animation: popIn 0.8s forwards;
+            position: relative;
+        }
+
+        .space {
+            width: 30px;
+        }
+
+        @keyframes popIn {
+            to {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        #logo {
+            width: 110px;
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: translateY(-40px);
+            animation: dropIn 1.5s forwards ease-in-out;
+            animation-delay: 3s;
+        }
+
+        @keyframes dropIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .typing-effect {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: rgb(40, 167, 69);
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid rgb(40, 167, 69);
+            animation: blink-caret 1s step-end infinite;
+            margin-top: 40px;
+            width: 0;
+            letter-spacing: 0.5px;
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: rgb(40, 167, 69);
+            }
+        }
+
+        #main-content {
+            display: none;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="intro">
+        <div class="ripple-container">
+            <div class="ripple"></div>
+            <div class="ripple"></div>
+            <div class="ripple"></div>
+            <div class="ripple"></div>
+        </div>
+
+        <div class="letter-container" id="title"></div>
+
+        <img id="logo" src="images/refined log.jpg" alt="Logo" />
+
+        <h2 class="typing-effect" id="typing"></h2>
+    </div>
+
+    <script>
+        const titleText = "ERA MED PHARMACEUTICALS PLC";
+        const container = document.getElementById("title");
+
+        const directions = [
+            'translateY(-100px)',
+            'translateY(100px)',
+            'translateX(100px)',
+            'translateX(-100px)'
+        ];
+
+        [...titleText].forEach((char, i) => {
+            const span = document.createElement("span");
+
+            if (char === " ") {
+                span.className = "space";
+            } else {
+                span.textContent = char;
+                span.classList.add("letter");
+                span.style.transform = directions[i % 4];
+                span.style.animationDelay = `${i * 150}ms`;
+            }
+
+            container.appendChild(span);
+        });
+
+        const phrases = [
+            "Defining Quality in every touch point !!! ",
+            "Trusted Devices. Reliable Medicines.",
+            "Healthcare with Innovation & Compassion"
+        ];
+
+        const typingElement = document.getElementById("typing");
+        let phraseIndex = 0;
+        let letterIndex = 0;
+        let isDeleting = false;
+        let stopTyping = false;
+
+        function type() {
+            if (stopTyping) return;
+
+            const currentPhrase = phrases[phraseIndex];
+            const currentText = currentPhrase.substring(0, letterIndex);
+            typingElement.textContent = currentText;
+            typingElement.style.width = `${currentText.length}ch`;
+
+            if (!isDeleting && letterIndex < currentPhrase.length) {
+                letterIndex++;
+                setTimeout(type, 100);
+            } else if (isDeleting && letterIndex > 0) {
+                letterIndex--;
+                setTimeout(type, 70);
+            } else {
+                if (!isDeleting) {
+                    isDeleting = true;
+                    setTimeout(type, 2000);
+                } else {
+                    isDeleting = false;
+                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                    setTimeout(type, 800);
+                }
+            }
+        }
+
+        setTimeout(() => {
+            type();
+        }, 4000);
+
+
+        setTimeout(() => {
+            stopTyping = true;
+
+            const eraseSmoothly = () => {
+                const currentText = typingElement.textContent;
+                if (currentText.length > 0) {
+                    typingElement.textContent = currentText.slice(0, -1);
+                    typingElement.style.width = `${currentText.length - 1}ch`;
+                    requestAnimationFrame(() => setTimeout(eraseSmoothly, 70));
+                } else {
+                    document.getElementById("intro").classList.add("fade-out");
+                    setTimeout(() => {
+                        window.location.href = "main.html";
+                    }, 1000);
+                }
+            };
+
+            setTimeout(() => {
+                eraseSmoothly();
+            }, 300);
+
+        }, 9000); 
+    </script>
+
+</body>
+
+</html>

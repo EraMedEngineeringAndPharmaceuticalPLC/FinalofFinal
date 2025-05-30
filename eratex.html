@@ -1,0 +1,658 @@
+<!-- EraTex design by de-(እደ-ኤልዳ)eldahcreatives -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Images@Era/Icons/Logo&ico/ico.ico">
+    <title>EraTex | Medical Textiles & Supplies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --green: #2e8b57;
+            --dark-green: #1e6e46;
+            --light: #f9f9f9;
+            --dark: #1f1f1f;
+            --accent: #f5a623;
+            --fabric: #e8f5e9;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+
+        .hero {
+            background:
+                linear-gradient(135deg, rgba(46, 139, 87, 0.9), rgba(30, 110, 70, 0.9)),
+                url('Images@Era/Icons/logo.png') left center/auto 80% no-repeat,
+                var(--green);
+            color: white;
+            padding: 8rem 2rem 6rem;
+            text-align: right;
+            position: relative;
+            overflow: hidden;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+
+        .animation-box {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 3px dashed rgba(255, 255, 255, 0.5);
+            animation: rectanglePath 15s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rectanglePath {
+            0% {
+                top: 15%;
+                left: 25%;
+                transform: rotate(0deg);
+            }
+
+            25% {
+                top: 15%;
+                left: 65%;
+                transform: rotate(90deg);
+            }
+
+            50% {
+                top: 65%;
+                left: 65%;
+                transform: rotate(180deg);
+            }
+
+            75% {
+                top: 65%;
+                left: 25%;
+                transform: rotate(270deg);
+            }
+
+            100% {
+                top: 15%;
+                left: 25%;
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .fabric-bg {
+            background-color: var(--fabric);
+            background-image:
+                linear-gradient(45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%),
+                linear-gradient(-45deg, rgba(0, 0, 0, 0.05) 25%, transparent 25%);
+            background-size: 60px 60px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo img {
+            height: 160px;
+            width: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: white;
+            color: var(--green);
+            padding: 12px 18px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .back-btn:hover {
+            background: var(--green);
+            color: white;
+            transform: translateX(-5px) rotate(-5deg);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-content {
+            max-width: 600px;
+            margin-left: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+
+        .mission {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .mission h2 {
+            color: var(--green);
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .mission h2:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+        }
+
+
+        .products {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            color: var(--green);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: repeating-linear-gradient(to right,
+                    var(--green),
+                    var(--green) 10px,
+                    white 10px,
+                    white 20px);
+        }
+
+        .product-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-info h3 {
+            color: var(--green);
+            margin-bottom: 0.5rem;
+        }
+
+
+        .roadmap {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .roadmap-steps {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .roadmap-steps::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 20px;
+            height: 100%;
+            width: 4px;
+            background: var(--green);
+        }
+
+        .step {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 3rem;
+        }
+
+        .step::before {
+            content: "";
+            position: absolute;
+            left: 16px;
+            top: 5px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--green);
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px var(--green);
+        }
+
+        .step-year {
+            font-weight: bold;
+            color: var(--green);
+            margin-bottom: 0.5rem;
+        }
+
+
+        .cta {
+            background: linear-gradient(135deg, var(--green), var(--dark-green));
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--green);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--dark-green);
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+
+        .footer {
+            background: white;
+            color: rgba(30, 110, 70, 0.9);
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(30, 110, 70, 0.9);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: rgba(30, 110, 70, 0.9);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .social-links a {
+            color: rgba(30, 110, 70, 0.9);
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-5px);
+            color: var(--accent);
+        }
+
+
+        @media (max-width: 992px) {
+            .hero {
+                min-height: 450px;
+                background-size: auto 70%, cover;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 6rem 1.5rem 4rem;
+                min-height: 400px;
+                background-size: auto 60%, cover;
+                text-align: center;
+            }
+
+            .hero-content {
+                margin: 0 auto;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .roadmap-steps::before {
+                left: 10px;
+            }
+
+            .step {
+                padding-left: 40px;
+            }
+
+            .animation-box {
+                width: 60px;
+                height: 60px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                min-height: 350px;
+                background-size: auto 50%, cover;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="main.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+
+
+    <header class="hero">
+
+        <div class="animation-box" style="width: 60px; height: 60px; animation-delay: 0s;"></div>
+        <div class="animation-box"
+            style="width: 100px; height: 100px; animation-delay: 3s; border-color: rgba(245,166,35,0.5);"></div>
+        <div class="animation-box"
+            style="width: 80px; height: 80px; animation-delay: 6s; border-color: rgba(255,255,255,0.3);"></div>
+
+        <div class="hero-content">
+            <h1>EraTex</h1>
+            <p>Defining Quality in Medical Textiles</p>
+        </div>
+        <div class="logo">
+            <img src="Images@Era/Icons/Logo&ico/EraTex.png" alt="Eramed Logo">
+        </div>
+    </header>
+
+
+    <section class="mission container">
+        <h2>Woven for Health. Tailored for Impact.</h2>
+        <p>At EraTex, we manufacture essential healthcare textiles and supplies—aprons, mattresses, pads, and
+            more—designed to meet real medical needs with expert care and precision. Locally made. Professionally
+            trusted.</p>
+        <p>Rooted in our belief that healthcare starts with quality at every layer, we combine our expertise,
+            technology, and capital to serve the people with solutions that matter—because in every stitch, we are still
+            Defining Quality.</p>
+    </section>
+
+
+    <section class="products">
+        <div class="container">
+            <h2>Our Current Products</h2>
+            <p>Medical-grade textiles serving Ethiopian healthcare</p>
+
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="Images@Era/Products and services/Apron.jpeg" alt="Medical Aprons">
+                    <div class="product-info">
+                        <h3>Protective Aprons</h3>
+                        <p>Fluid-resistant medical aprons for infection control</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="Images@Era/Products and services/Matress.jpeg" alt="Medical Mattresses">
+                    <div class="product-info">
+                        <h3>Hospital Mattresses</h3>
+                        <p>Pressure-relief mattresses with anti-microbial coating</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="Images@Era/Products and services/Pads.jpeg" alt="Medical Pads">
+                    <div class="product-info">
+                        <h3>Absorbent Pads</h3>
+                        <p>High-absorption medical pads for patient care</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="Images@Era/Products and services/PPE kits.jpeg" alt="PPE Kits">
+                    <div class="product-info">
+                        <h3>PPE Kits</h3>
+                        <p>Complete personal protective equipment sets</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="mission container fabric-bg">
+        <h2>Coming Soon: Complete Medical Textile Solutions</h2>
+        <p>We're expanding our production to offer full-range medical textile solutions including:</p>
+        <ul style="margin-left: 2rem; margin-top: 1rem;">
+            <li style="margin-bottom: 0.5rem;">Surgical drapes and gowns</li>
+            <li style="margin-bottom: 0.5rem;">Advanced wound care dressings</li>
+            <li style="margin-bottom: 0.5rem;">Orthopedic padding systems</li>
+            <li style="margin-bottom: 0.5rem;">Custom hospital linens</li>
+        </ul>
+    </section>
+
+
+    <section class="roadmap container">
+        <div class="section-title">
+            <h2>Our East African Expansion Plan</h2>
+            <p>Local Production, Global Standards</p>
+        </div>
+
+        <div class="roadmap-steps">
+            <div class="step">
+                <div class="step-year">2024</div>
+                <h3>Ethiopian Market Consolidation</h3>
+                <p>Strengthening production capacity and distribution networks nationwide</p>
+            </div>
+            <div class="step">
+                <div class="step-year">2025</div>
+                <h3>Regional Expansion Begins</h3>
+                <p>Launching distribution to Kenya and Tanzania</p>
+            </div>
+            <div class="step">
+                <div class="step-year">2026</div>
+                <h3>East African Coverage</h3>
+                <p>Full market penetration in 5+ countries</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="cta">
+        <div class="container">
+            <h2>Partner With EraTex</h2>
+            <p>For hospitals, clinics, and medical suppliers across East Africa</p>
+            <a href="#contact" class="btn">Request Catalog</a>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Products</a>
+                <a href="#">Sustainability</a>
+                <a href="#">Careers</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 EraTex. A sister company of EraMed Group</p>
+        </div>
+    </footer>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const colors = ['rgba(255,255,255,0.4)', 'rgba(245,166,35,0.4)', 'rgba(255,255,255,0.2)'];
+            const sizes = [70, 90, 110];
+            const delays = [1, 4, 7];
+            const speeds = [15, 18, 20];
+
+            const hero = document.querySelector('.hero');
+
+            colors.forEach((color, i) => {
+                const box = document.createElement('div');
+                box.className = 'animation-box';
+                box.style.borderColor = color;
+                box.style.width = `${sizes[i]}px`;
+                box.style.height = `${sizes[i]}px`;
+                box.style.animationDelay = `${delays[i]}s`;
+                box.style.animationDuration = `${speeds[i]}s`;
+                hero.appendChild(box);
+            });
+
+
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.product-card, .step');
+                elements.forEach(el => {
+                    const elPosition = el.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    if (elPosition < screenPosition) {
+                        el.style.opacity = '1';
+                        el.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+
+
+            document.querySelectorAll('.product-card, .step').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll();
+        });
+    </script>
+</body>
+
+</html>

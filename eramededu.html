@@ -1,0 +1,617 @@
+<!--EraMed Edu design by de-(እደ-ኤልዳ)eldahcreatives -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="Images@Era/Icons/Logo&ico/ico.ico">
+    <title>EramedEdu - Educational Equipment Import</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary: #28a745;
+            --primary-dark: #218838;
+            --secondary: #f8f9fa;
+            --dark: #343a40;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Images@Era/sister companies/edu2.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 4rem 2rem;
+            text-align: center;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(40, 167, 69, 0.9);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        nav {
+            background: #fff;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            box-shadow: 0 2px 10px rgba(40, 167, 69, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: rgba(40, 167, 69, 0.9);
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: rgba(40, 167, 69, 0.9);
+            color: white;
+        }
+
+        section {
+            padding: 5rem 10%;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: rgba(40, 167, 69, 0.9);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: rgba(237, 243, 238, 0.9);
+        }
+
+        .cta {
+            background: linear-gradient(rgba(40, 167, 69, 0.9), rgba(40, 167, 69, 0.9)), url('Images@Era/sister companies/1edumed.png');
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .cta button {
+            background: white;
+            color: rgba(40, 167, 69, 0.9);
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.9);
+        }
+
+        .cta button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(40, 167, 69, 0.9);
+        }
+
+        footer {
+            background: rgba(40, 167, 69, 0.9);
+            color: white;
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            color: rgba(40, 167, 69);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: rgba(40, 167, 69, 0.9);
+            box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+            outline: none;
+        }
+
+        .contact-form button {
+            background: rgba(40, 167, 69, 0.9);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background: rgba(40, 167, 69, 0.9);
+        }
+
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.9);
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(40, 167, 69, 0.9);
+        }
+
+        .product-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-img img {
+            transform: scale(1.1);
+        }
+
+        .product-content {
+            padding: 1.5rem;
+        }
+
+        .product-content h3 {
+            margin-top: 0;
+            color: rgba(40, 167, 69);
+            line-height: 2rem;
+        }
+
+        .product-content p {
+            margin-top: 0;
+            color: rgba(40, 167, 69);
+            line-height: 2rem;
+        }
+
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(40, 167, 69, 0.9);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(40, 167, 69, 0.9);
+        }
+
+        .feature i {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature h3,
+        p {
+            font-size: 1.2rem;
+            color: white;
+        }
+
+
+        .testimonials {
+            background: rgba(235, 243, 237, 0.9);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.9);
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #28a745;
+            font-size: 1.2rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            size: 50px;
+            color: #28a745;
+        }
+
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 1rem;
+        }
+
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            color: rgba(40, 167, 69);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 10px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+
+        .back-btn i {
+            margin-right: 8px;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: white;
+        }
+
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1.2rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+
+            section {
+                padding: 3rem 5%;
+            }
+        }
+
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <header class="animate-on-scroll">
+
+
+        <h1 class="animate__animated animate__fadeInDown">EramedEdu</h1>
+        <p class="animate__animated animate__fadeInUp animate__delay-1s">Tools for Teaching. Seeds for the Future!</p>
+        <a href="#contact" class="animate__animated animate__fadeInUp animate__delay-2s cta-button"
+            style="margin-top: 2rem; display: inline-block; background: var(--primary); color: white; padding: 1rem 2rem;font-size: 1.1rem; border-radius: 50px; text-decoration: none; font-weight: bold; transition: all 0.3s ease;">Get
+            Started</a>
+    </header>
+
+    <nav>
+        <a href="#about"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="#products"><i class="fas fa-box-open"></i> Products</a>
+        <a href="#why"><i class="fas fa-star"></i> Why Us</a>
+        <a href="#testimonials"><i class="fas fa-quote-left"></i> Testimonials</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2 class="section-title">Who We Are</h2>
+        <div class="animate-on-scroll"
+            style="display: flex; flex-wrap: wrap; gap: 2rem; font-size: 1.5rem; align-items: center;color: #28a745;">
+            <div style="flex: 1; min-width: 300px;color: #28a745;">
+                <p>EramedEdu is a sister company of EramedGroups, dedicated to importing world-class educational
+                    equipment for schools, universities, and vocational institutions across Ethiopia. Our goal is to
+                    modernize learning environments with quality, affordable tools.</p>
+                <p>With over a decade of experience in educational solutions, we bridge the gap between global
+                    educational technology providers and Ethiopian institutions, ensuring you get the best equipment at
+                    competitive prices.</p>
+            </div>
+            <div style="flex: 1; min-width: 300px;">
+                <img src="Images@Era/Icons/Logo&ico/EraMedEdu.png" alt="About EramedEdu"
+                    style="width: 100%; border-radius: 10px; box-shadow: 0 10px 30px #28a745;">
+            </div>
+        </div>
+    </section>
+
+    <section id="products" style="background: #f9f9f9;">
+        <h2 class="section-title">Our Products</h2>
+        <div class="product-grid">
+            <div class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="Images@Era/sister companies/since lab equipment.jpeg" alt="Science Lab Equipment">
+                </div>
+                <div class="product-content">
+                    <h3>Science Lab Equipment</h3>
+                    <p>Complete solutions for Physics, Chemistry, and Biology laboratories with modern, durable
+                        equipment that meets international standards.</p>
+                </div>
+            </div>
+
+            <div class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="Images@Era/sister companies/classroom.jpeg" alt="Classroom Technology">
+                </div>
+                <div class="product-content">
+                    <h3>Classroom Technology</h3>
+                    <p>Interactive smart boards, projectors, audio systems, and other digital classroom solutions to
+                        enhance Medical teaching and learning.</p>
+                </div>
+            </div>
+
+            <div class="product-card animate-on-scroll">
+                <div class="product-img">
+                    <img src="Images@Era/sister companies/TVET.jpeg" alt="TVET Equipment">
+                </div>
+                <div class="product-content">
+                    <h3>TVET and Vocational Tools</h3>
+                    <p>Specialized equipment for technical and vocational education in fields like Biomedical
+                        engineering.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why">
+        <h2 class="section-title">Why Choose Us</h2>
+        <div class="features">
+            <div class="feature animate-on-scroll">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Trusted Legacy</h3>
+                <p>Backed by EramedGroups' reputation for excellence and reliability in the Ethiopian market.</p>
+            </div>
+
+            <div class="feature animate-on-scroll">
+                <i class="fas fa-globe"></i>
+                <h3>Global Sourcing</h3>
+                <p>We source from top manufacturers worldwide while providing local support and service.</p>
+            </div>
+
+            <div class="feature animate-on-scroll">
+                <i class="fas fa-tags"></i>
+                <h3>Affordable Quality</h3>
+                <p>Competitive pricing without compromising on equipment quality or durability.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2 class="section-title">What Our Clients Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial animate-on-scroll">
+                <div class="testimonial-content">
+                    "EramedEdu successfully delivered high-quality educational equipment and models for the 2017
+                    academic year, in full compliance with the specifications provided — greatly enhancing our teaching
+                    and learning environment."
+                </div>
+                <div class="testimonial-author">
+                    <img src="Images@Era/Icons/Logo&ico/bonga.jpeg"
+                        style="width: 10%; height:10%; border-radius: 10px; box-shadow: 0 10px 30px #28a745;">
+                    <div>
+                        <h4>-Bonga University</h4>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cta animate-on-scroll">
+        <h2>Empowering Minds. Enriching Tomorrows.Let's Build Smarter Classrooms Together!</h2>
+        <button onclick="location.href='#contact'">Request a Quote</button>
+    </section>
+
+    <section id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 3rem; color: #28a745;">
+            <div style="flex: 1; min-width: 300px;color: #28a745;" class="animate-on-scroll">
+                <h3>Get in Touch</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</p>
+                <p><i class="fas fa-phone"></i> +251 911 12409</p>
+                <p><i class="fas fa-envelope"></i> eramedpharmapro@wgmail.com</p>
+
+                <div style="margin-top: 2rem;">
+                    <h3>Follow Us</h3>
+                    <div style="display: flex; gap: 1rem; font-size: 1.5rem;">
+                        <a href="#" style="color: var(--primary);"><i class="fab fa-facebook"></i></a>
+                        <a href="#" style="color: var(--primary);"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: var(--primary);"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" style="color: var(--primary);"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="flex: 1; min-width: 300px;color: #28a745;" class="animate-on-scroll">
+                <form class="contact-form">
+                    <input type="text" placeholder="Full Name" required />
+                    <input type="text" placeholder="Institution Name" />
+                    <input type="email" placeholder="Email Address" required />
+                    <input type="tel" placeholder="Phone Number" required />
+                    <textarea rows="5" placeholder="Tell us your needs..."></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <a href="main.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+
+    <footer>
+        <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 1rem;font-size: 1.1rem;">
+            <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
+            <a href="#" style="color: white; text-decoration: none;">Terms of Service</a>
+            <a href="#" style="color: white; text-decoration: none;">Careers</a>
+        </div>
+        <p>&copy; 2025 EramedEdu | Eldah Creatives Design & Development </p>
+    </footer>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+
+
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

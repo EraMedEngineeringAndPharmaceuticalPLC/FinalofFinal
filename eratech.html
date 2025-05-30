@@ -1,0 +1,872 @@
+<!-- eratech design by de-(እደ-ኤልዳ)eldahcreatives -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Images@Era/Icons/Logo&ico/ico.ico">
+    <title>EraTech | Digital Healthcare Innovation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --green: #2e8b57;
+            --dark-green: #1e6e46;
+            --light: #f9f9f9;
+            --dark: #1f1f1f;
+            --accent: #f5a623;
+            --teal: #26a69a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Back Button - Fixed */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: white;
+            color: var(--green);
+            padding: 10px 15px;
+            border-radius: 50px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--green);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+
+        .hero {
+            background: linear-gradient(135deg, rgba(46, 139, 87, 0.9), rgba(30, 110, 70, 0.9));
+            color: white;
+            padding: 8rem 2rem 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            animation: gradientShift 8s infinite alternate;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('Images@Era/Icons/Logo&ico/EraTech.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 57%;
+            opacity: 0.65;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            text-align: left;
+            margin-bottom: 30px;
+            animation: fadeInDown 3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo img {
+            height: 120px;
+            width: auto;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            animation: fadeInUp 1s ease;
+            text-shadow: 0 2px 4px rgba(21, 207, 61, 0.2);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease 0.2s forwards;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .countdown {
+            background: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(59, 219, 38, 0.05);
+            border-radius: 1rem;
+            max-width: 900px;
+            margin: -3rem auto 3rem;
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 10s ease;
+        }
+
+        .countdown h2 {
+            color: var(--green);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .countdown-box {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            min-width: 100px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--green);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .countdown-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .countdown-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--green);
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--dark);
+            opacity: 0.8;
+        }
+
+
+        .mission {
+            background: white;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .mission-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .mission-text {
+            flex: 1 1 500px;
+        }
+
+        .mission-text h2 {
+            color: var(--green);
+            font-size: 2rem;
+            position: relative;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .mission-text h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+        }
+
+        .mission-image {
+            flex: 1 1 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: perspective(1000px) rotateY(-5deg);
+            transition: transform 0.5s ease;
+        }
+
+        .mission-image:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .mission-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .mission-image:hover img {
+            transform: scale(1.05);
+        }
+
+
+        .project {
+            background: linear-gradient(135deg, rgba(46, 139, 87, 0.1), rgba(26, 115, 232, 0.1));
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .project h2 {
+            color: var(--green);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .project p.subtitle {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            opacity: 0.8;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--green);
+        }
+
+        .project-card h3 {
+            color: var(--green);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .project-features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            flex: 1 1 200px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature i {
+            font-size: 2rem;
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+
+        .team {
+            padding: 4rem 2rem;
+            background: white;
+            text-align: center;
+        }
+
+        .team h2 {
+            color: var(--green);
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .team-member {
+            background: var(--light);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+            border: 3px solid var(--teal);
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover img {
+            transform: scale(1.1);
+        }
+
+
+        .cta {
+            background: linear-gradient(135deg, var(--green), var(--dark-green));
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin: 2rem 0;
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 L0,100 Z" /></svg>');
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--green);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--dark-green);
+            transition: width 0.3s ease;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+
+        .newsletter {
+            padding: 3rem 2rem;
+            background: var(--light);
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            color: var(--green);
+            margin-bottom: 1rem;
+        }
+
+        .newsletter p {
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 50px 0 0 50px;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--green);
+        }
+
+        .newsletter-form button {
+            background: var(--green);
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 50px 50px 0;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--dark-green);
+        }
+
+
+        .footer {
+            background: rgb(237, 241, 237);
+            color: var(--dark-green);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--dark-green);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: var(--dark-green);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--accent);
+        }
+
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 6rem 1rem 4rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero::after {
+                background-size: 60%;
+                opacity: 0.08;
+            }
+
+            .mission-container {
+                flex-direction: column;
+            }
+
+            .countdown-box {
+                flex: 1 1 150px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-form input,
+            .newsletter-form button {
+                border-radius: 50px;
+                width: 100%;
+            }
+
+            .newsletter-form button {
+                margin-top: 0.5rem;
+                padding: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .logo img {
+                height: 100px;
+            }
+
+            .countdown-box {
+                min-width: 80px;
+                padding: 1rem;
+            }
+
+            .countdown-value {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="main.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+
+
+    <header class="hero">
+        <div class="logo">
+            <img src="Images@Era/Icons/Logo&ico/EraTech.png" alt="EraTech Logo">
+        </div>
+        <div class="container">
+            <h1>EraTech</h1>
+            <p>Defining Quality in Digital Healthcare Solutions</p>
+        </div>
+    </header>
+
+
+    <section class="countdown">
+        <h2>Launching in</h2>
+        <div class="countdown-container">
+            <div class="countdown-box">
+                <div class="countdown-value" id="days">00</div>
+                <div class="countdown-label">Days</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-value" id="hours">00</div>
+                <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-value" id="minutes">00</div>
+                <div class="countdown-label">Minutes</div>
+            </div>
+            <div class="countdown-box">
+                <div class="countdown-value" id="seconds">00</div>
+                <div class="countdown-label">Seconds</div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="mission">
+        <div class="mission-container">
+            <div class="mission-text">
+                <h2>Innovation with Purpose. Technology with Impact.</h2>
+                <p>At <strong>EraTech</strong>, we are driven by a bold mission: to solve local and global healthcare
+                    challenges using smart, research-driven digital solutions. Launching soon, EraTech brings together
+                    biomedical engineers, pharmacists, software developers, and computer scientists—all united by
+                    curiosity, compassion, and a commitment to improving lives.</p>
+                <p>We don't just build technology—we design solutions rooted in real-world healthcare needs. From
+                    clinical decision tools to smart health platforms, our work is guided by rigorous R&D and a deep
+                    understanding of both patients and providers.</p>
+                <p><em>Powered by innovation, grounded in empathy—EraTech is where healthcare meets the future.</em></p>
+            </div>
+            <div class="mission-image">
+                <img src="Images@Era/Meet our team/photo_2025-04-27_14-50-24.jpg" alt="EraTech Team">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="project">
+        <h2>Our Flagship Project</h2>
+        <p class="subtitle">Introducing <strong>MedConnect</strong> – A digital platform revolutionizing healthcare
+            accessibility nationwide</p>
+
+        <div class="project-card">
+            <h3>MedConnect: Bridging Gaps in Healthcare</h3>
+            <p>A unified digital ecosystem connecting patients, providers, and medical suppliers across Ethiopia.
+                Designed for seamless access to medical services, prescriptions, and equipment—anytime, anywhere.</p>
+
+            <div class="project-features">
+                <div class="feature">
+                    <i class="fas fa-laptop-medical"></i>
+                    <h4>Telemedicine</h4>
+                    <p>Virtual consultations with licensed doctors</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-pills"></i>
+                    <h4>E-Pharmacy</h4>
+                    <p>Prescription management & delivery</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-ambulance"></i>
+                    <h4>Emergency Connect</h4>
+                    <p>Rapid response coordination</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Health Analytics</h4>
+                    <p>Real-time public health insights</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="team">
+        <h2>Our Interdisciplinary Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="Images@Era/Meet our team/beimnetweb.jpg" alt="Creative Developer">
+                <h3>Eng. Beimnet Essayas</h3>
+                <p>Lead Biomedical Engineer</p>
+                <p>Clinical Systems Architect</p>
+            </div>
+            <div class="team-member">
+                <img src="Images@Era/Team/tech2.jpg" alt="Data Scientist">
+                <h3>Amanuel Solomon </h3>
+                <p>Chief Technology Officer</p>
+                <p>Health Informatics Expert</p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="cta">
+        <h2>Ready to Transform Healthcare with Technology?</h2>
+        <p>Join our waiting list for early access to MedConnect and EraTech's digital solutions.</p>
+        <a href="#contact" class="btn">Get Early Access <i class="fas fa-arrow-right"></i></a>
+    </section>
+
+
+    <section class="newsletter">
+        <h2>Stay Updated</h2>
+        <p>Subscribe to receive launch updates and industry insights</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email address" required>
+            <button type="submit">Subscribe <i class="fas fa-paper-plane"></i></button>
+        </form>
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">About</a>
+            <a href="#">MedConnect</a>
+            <a href="#">Careers</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-medium"></i></a>
+        </div>
+        <p>&copy; 2025 EraTech. A sister company of EraMed Group</p>
+    </footer>
+
+    <script>
+
+        function updateCountdown() {
+            const launchDate = new Date();
+            launchDate.setMonth(launchDate.getMonth() + 3);
+
+            const now = new Date().getTime();
+            const distance = launchDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = Math.floor(hours).toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = Math.floor(minutes).toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = Math.floor(seconds).toString().padStart(2, '0');
+
+            if (distance < 0) {
+                clearInterval(countdownTimer);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+            }
+        }
+
+        updateCountdown();
+        const countdownTimer = setInterval(updateCountdown, 1000);
+
+
+        document.querySelector('.newsletter-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            alert(`Thank you! We'll notify you at ${email} when we launch.`);
+            this.querySelector('input').value = '';
+        });
+
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.mission-image, .project-card, .feature, .team-member');
+            elements.forEach(el => {
+                const elPosition = el.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                if (elPosition < screenPosition) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+
+        document.querySelectorAll('.mission-image, .project-card, .feature, .team-member').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+
+</html>

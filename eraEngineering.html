@@ -1,0 +1,671 @@
+<!-- EraMed engineering design by de-(እደ-ኤልዳ)eldahcreatives -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Images@Era/Icons/Logo&ico/ico.ico">
+    <title>Era Med Manufacturing | Medical Equipment</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --brand-primary: rgb(40, 167, 69);
+            --brand-dark: rgb(30, 120, 50);
+            --brand-light: rgb(220, 248, 228);
+            --brand-accent: rgb(255, 195, 0);
+            --light: #f9f9f9;
+            --dark: #1f1f1f;
+            --gray: #6c757d;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        /* Back Button - Fixed */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: white;
+            color: var(--brand-primary);
+            padding: 10px 15px;
+            border-radius: 50px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background: var(--brand-primary);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        .logo {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .logo img {
+            height: 160px;
+            width: auto;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+        }
+
+        /* Hero Section with Logo Background */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(220, 248, 228, 0.95), rgba(40, 167, 69, 0.95));
+            color: white;
+            padding: 6rem 2rem 4rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('Images@Era/Icons/Logo&ico/EraEngineering Logo.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 65%;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            font-weight: 300;
+        }
+
+        /* Mission Section */
+        .mission {
+            background: white;
+            padding: 4rem 2rem;
+        }
+
+        .mission-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .mission-text {
+            flex: 1 1 500px;
+        }
+
+        .mission-text h2 {
+            color: var(--brand-primary);
+            font-size: 2rem;
+            position: relative;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .mission-text h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--brand-accent);
+        }
+
+        .mission-text p {
+            margin-bottom: 1rem;
+            color: var(--gray);
+        }
+
+        .mission-text p strong {
+            color: var(--brand-dark);
+        }
+
+        .mission-image {
+            flex: 1 1 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .mission-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .mission-image1 {
+            flex: 1 1 100px;
+            width: 50%;
+            height: 50%;
+            position: center;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(40, 167, 69, 0.1);
+            margin: 2rem auto;
+        }
+
+        .mission-image img,
+        .mission-image1 img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .mission-image img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Stats Section */
+        .stats {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 3rem auto;
+            max-width: 900px;
+        }
+
+        .stats div {
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border-radius: 1rem;
+            flex: 1 1 200px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--brand-primary);
+        }
+
+        .stats div:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .stats i {
+            font-size: 2.5rem;
+            color: var(--brand-primary);
+            margin-bottom: 1rem;
+        }
+
+        .stats h3 {
+            margin: 0.5rem 0;
+            color: var(--brand-dark);
+            font-size: 1.5rem;
+        }
+
+        .stats p {
+            color: var(--gray);
+            margin: 0;
+        }
+
+        /* Products Grid */
+        .products {
+            background: var(--light);
+            padding: 4rem 2rem;
+        }
+
+        .products h2 {
+            text-align: center;
+            color: var(--brand-primary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .products>p {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            color: var(--gray);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 2rem auto 0;
+        }
+
+        .product-card {
+            background: white;
+            border-left: 4px solid var(--brand-primary);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card i {
+            color: var(--brand-primary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            margin: 0.5rem 0;
+            color: var(--brand-dark);
+            font-size: 1.3rem;
+        }
+
+        .product-card p {
+            color: var(--gray);
+            margin: 0;
+        }
+
+        .milestones {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .milestones h2 {
+            text-align: center;
+            color: var(--brand-primary);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .timeline:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--brand-primary);
+        }
+
+        .milestone {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+
+        .milestone:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .milestone:nth-child(even) {
+            left: 50%;
+        }
+
+        .milestone:after {
+            content: '';
+            position: absolute;
+            top: 30px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--brand-primary);
+            z-index: 1;
+        }
+
+        .milestone:nth-child(odd):after {
+            right: -12px;
+        }
+
+        .milestone:nth-child(even):after {
+            left: -12px;
+        }
+
+        .milestone-content {
+            padding: 20px;
+            background: var(--light);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .milestone-content:hover {
+            transform: scale(1.02);
+        }
+
+        .milestone h3 {
+            color: var(--brand-primary);
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        .milestone p {
+            color: var(--gray);
+        }
+
+        .cta {
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-dark));
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin: 2rem auto;
+            border-radius: 1rem;
+            max-width: 1200px;
+            box-shadow: 0 10px 30px rgba(40, 167, 69, 0.3);
+        }
+
+        .cta h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 1.5rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .cta .btn {
+            display: inline-block;
+            background: white;
+            color: var(--brand-primary);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+
+        .footer {
+            background: var(--brand-light);
+            color: var(--brand-dark);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            font-weight: 500;
+        }
+
+        .facility-image {
+            width: 100%;
+            margin: 2rem 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .facility-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .facility-image img:hover {
+            transform: scale(1.03);
+        }
+
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 5rem 1rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero::before {
+                background-size: 70%;
+                opacity: 0.1;
+            }
+
+            .mission-container {
+                flex-direction: column;
+            }
+
+            .mission-image,
+            .mission-text {
+                flex: 1 1 100%;
+            }
+
+            .timeline:before {
+                left: 31px;
+            }
+
+            .milestone {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .milestone:nth-child(even) {
+                left: 0;
+            }
+
+            .milestone:nth-child(odd):after,
+            .milestone:nth-child(even):after {
+                left: 21px;
+            }
+
+            .milestone:nth-child(odd) {
+                text-align: left;
+            }
+
+            .stats div {
+                flex: 1 1 150px;
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .logo img {
+                height: 120px;
+            }
+
+            .stats div {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href="main.html" class="back-btn">
+        <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+
+
+    <header class="hero">
+        <div class="logo">
+            <img src="Images@Era/Icons/Logo&ico/EraEngineering Logo.png" alt="Eramed Logo">
+        </div>
+        <div class="container">
+            <h1>Era Med Engineering</h1>
+            <p>High-quality medical equipment for modern healthcare</p>
+        </div>
+    </header>
+
+    <section class="mission">
+        <div class="mission-container">
+            <div class="mission-text">
+                <h2>Our Mission</h2>
+                <p><strong>Precision. Performance. Purpose.</strong></p>
+                <p>Innovating Medical Solutions – Today and Tomorrow</p>
+                <p>At Era Med Manufacturing, we combine Ethiopian expertise with cutting-edge technology to produce
+                    reliable, affordable medical equipment that meets international standards. Our mission is to
+                    strengthen Africa's healthcare infrastructure through local manufacturing excellence.</p>
+                <p>From hospital beds to surgical tools, we're committed to "Defining Quality" in every product we
+                    create - reducing import dependency while improving accessibility and affordability.</p>
+            </div>
+
+            <div class="mission-image">
+                <img src="Images@Era/Office featured pictures/manu 4.jpg" alt="Manufacturing Facility">
+            </div>
+        </div>
+    </section>
+
+
+    <section class="container">
+        <div class="stats">
+            <div>
+                <i class="fas fa-boxes"></i>
+                <h3>8+</h3>
+                <p>Products</p>
+            </div>
+            <div>
+                <i class="fas fa-industry"></i>
+                <h3>2</h3>
+                <p>Production Lines</p>
+            </div>
+            <div>
+                <i class="fas fa-certificate"></i>
+                <h3>EFDA and ISO Certified</h3>
+                <p>Quality Standards</p>
+            </div>
+        </div>
+
+        <div class="mission-image1">
+            <img src="Images@Era/Office featured pictures/manufactuting vacility 3.jpg" alt="Manufacturing Facility">
+        </div>
+    </section>
+
+
+    <section class="products container">
+        <h2>Our Core Products</h2>
+        <p>Designed for Professionals. Built for Patients.</p>
+        <div class="products-grid">
+            <div class="product-card">
+                <i class="fas fa-procedures"></i>
+                <h3>Hospital Beds</h3>
+                <p>Ergonomic designs for patient comfort and safety.</p>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-wheelchair"></i>
+                <h3>Wheelchairs</h3>
+                <p>Durable and lightweight mobility solutions.</p>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-truck"></i>
+                <h3>Medical Trolleys</h3>
+                <p>Sterile and efficient hospital transport.</p>
+            </div>
+            <div class="product-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Bed Screens</h3>
+                <p>Privacy and infection control solutions.</p>
+            </div>
+        </div>
+
+        <div class="mission-image1">
+            <img src="Images@Era/Office featured pictures/manufacturing facility 2.jpg" alt="Manufacturing Facility">
+        </div>
+    </section>
+
+
+    <section class="milestones container">
+        <h2>Our Roadmap: 2025 – 2030</h2>
+        <div class="timeline">
+            <div class="milestone">
+                <div class="milestone-content">
+                    <h3>2025</h3>
+                    <p>Full-scale production of hospital beds and basic medical Equipments.</p>
+                </div>
+            </div>
+            <div class="milestone">
+                <div class="milestone-content">
+                    <h3>2026</h3>
+                    <p>Expansion into medical device manufacturing.</p>
+                </div>
+            </div>
+            <div class="milestone">
+                <div class="milestone-content">
+                    <h3>2027</h3>
+                    <p>Regional exports and new warehouse facility.</p>
+                </div>
+            </div>
+            <div class="milestone">
+                <div class="milestone-content">
+                    <h3>2028</h3>
+                    <p>Automation of production lines & sustainability initiatives.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mission-image1">
+            <img src="Images@Era/Office featured pictures/manufacturing facility1.jpg" alt="Manufacturing Facility">
+        </div>
+    </section>
+
+
+    <section class="cta container">
+        <h2>Partner With Us</h2>
+        <p>We supply Engineering Solutions that Save Lives for hospitals, clinics, and distributors in Ethiopia right
+            now and will across Africa soon.</p>
+        <a href="#contact" class="btn">Contact us</a>
+    </section>
+
+
+    <footer class="footer">
+        <p>&copy; 2025 Era Med Engineering. A sister company of EraMed group</p>
+    </footer>
+</body>
+
+</html>
